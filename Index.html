@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impulso Digital | Soluciones Web Profesionales</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b1120;
+color:white;
+overflow-x:hidden;
+}
+
+.gradient{
+background:linear-gradient(135deg,#0b1120,#111827,#0f172a);
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(11,17,32,0.8);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+nav h1{
+font-size:22px;
+font-weight:800;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+opacity:.7;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h2{
+font-size:52px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero span{
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:20px;
+opacity:.7;
+margin-bottom:40px;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:40px;
+border:none;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+margin:10px;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+color:white;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(99,102,241,.4);
+}
+
+.btn-outline{
+background:transparent;
+border:1px solid #38bdf8;
+color:#38bdf8;
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 60px;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:60px;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.service-card{
+background:#111827;
+padding:40px;
+border-radius:20px;
+transition:.4s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 40px rgba(56,189,248,.3);
+}
+
+.service-card h3{
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+/* ABOUT */
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+opacity:.8;
+line-height:1.7;
+}
+
+/* PROCESS */
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+text-align:center;
+}
+
+.process-box{
+background:#111827;
+padding:30px;
+border-radius:20px;
+}
+
+/* CONTACT */
+
+.contact form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact input, .contact textarea{
+padding:15px;
+border-radius:12px;
+border:none;
+background:#111827;
+color:white;
+}
+
+.success-message{
+display:none;
+text-align:center;
+margin-top:20px;
+color:#38bdf8;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:#0f172a;
+opacity:.6;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+.hero h2{font-size:34px;}
+section{padding:80px 20px;}
+nav{padding:20px;}
+}
+</style>
+</head>
+
+<body class="gradient">
+
+<nav>
+<h1>Impulso Digital</h1>
+<div>
+<a href="#servicios">Servicios</a>
+<a href="#proceso">Proceso</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Soluciones digitales que <span>impulsan</span> tu negocio</h2>
+<p>Desarrollo web profesional, sistemas personalizados y optimización digital para empresas modernas.</p>
+<a href="#contacto"><button class="btn btn-primary">Solicitar Cotización</button></a>
+<a href="#servicios"><button class="btn btn-outline">Ver Servicios</button></a>
+</div>
+</section>
+
+<section id="servicios">
+<h2 class="section-title">Servicios</h2>
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Desarrollo Web</h3>
+<p>Landing pages y sitios corporativos modernos, rápidos y optimizados para conversión.</p>
+</div>
+
+<div class="service-card">
+<h3>Optimización Google Maps</h3>
+<p>Mejora tu visibilidad local y atrae más clientes con posicionamiento optimizado.</p>
+</div>
+
+<div class="service-card">
+<h3>Sistemas Personalizados</h3>
+<p>Control de inventario, ventas y automatización para negocios pequeños y medianos.</p>
+</div>
+
+<div class="service-card">
+<h3>Mantenimiento Web</h3>
+<p>Actualización, mejoras de seguridad y optimización de rendimiento.</p>
+</div>
+
+<div class="service-card">
+<h3>Automatización Digital</h3>
+<p>Formularios inteligentes, integración de correos y flujos automáticos.</p>
+</div>
+
+<div class="service-card">
+<h3>Optimización de Rendimiento</h3>
+<p>Mejora la velocidad y experiencia de usuario en tu sitio actual.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Sobre Nosotros</h2>
+<div class="about">
+<p>Somos un equipo especializado en soluciones digitales modernas. Ayudamos a negocios locales y emprendedores a digitalizar sus procesos, mejorar su presencia online y aumentar sus oportunidades de crecimiento.</p>
+</div>
+</section>
+
+<section id="proceso">
+<h2 class="section-title">Nuestro Proceso</h2>
+<div class="process-grid">
+<div class="process-box"><h3>1. Análisis</h3><p>Evaluamos tus necesidades y objetivos.</p></div>
+<div class="process-box"><h3>2. Desarrollo</h3><p>Diseñamos y construimos la solución ideal.</p></div>
+<div class="process-box"><h3>3. Implementación</h3><p>Entrega optimizada y lista para operar.</p></div>
+<div class="process-box"><h3>4. Soporte</h3><p>Acompañamiento y mejoras continuas.</p></div>
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<h2 class="section-title">Contáctanos</h2>
+
+<form id="contact-form">
+<input type="text" name="from_name" placeholder="Nombre" required>
+<input type="email" name="from_email" placeholder="Correo electrónico" required>
+<textarea name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto" required></textarea>
+<button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+</form>
+
+<div class="success-message" id="success-msg">
+Mensaje enviado correctamente 🚀 Nos pondremos en contacto pronto.
+</div>
+
+</section>
+
+<footer>
+© 2026 Impulso Digital | Todos los derechos reservados
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5586673152" target="_blank">💬</a>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+emailjs.init("d-v59b4xRGHjyAWRm");
+})();
+
+document.getElementById("contact-form")
+.addEventListener("submit", function(event) {
+event.preventDefault();
+
+emailjs.sendForm("service_676xvnv","template_k9pad2k",this)
+.then(function(){
+document.getElementById("success-msg").style.display="block";
+document.getElementById("contact-form").reset();
+},function(error){
+alert("Error al enviar mensaje");
+console.log(error);
+});
+});
+</script>
+
+</body>
+</html>
