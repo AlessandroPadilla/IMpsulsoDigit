@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Impulso Digital diseña páginas web premium para negocios que quieren verse serios, vender mejor y crecer online." />
+  <title>Impulso Digital | Diseño web premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1024;
+      --panel: rgba(15, 23, 52, 0.72);
+      --panel-strong: rgba(14, 20, 45, 0.95);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.14);
+      --text: #f5f7ff;
+      --muted: #aeb6d9;
+      --muted-2: #7e89b4;
+      --primary: #6d7cff;
+      --primary-2: #42d3ff;
+      --accent: #8e5bff;
+      --success: #75f0c5;
+      --warning: #ffd978;
+      --shadow: 0 30px 80px rgba(2, 6, 23, 0.45);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: min(1180px, calc(100% - 32px));
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(66, 211, 255, 0.15), transparent 24%),
+        radial-gradient(circle at 85% 10%, rgba(109, 124, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 75% 85%, rgba(142, 91, 255, 0.16), transparent 25%),
+        linear-gradient(180deg, #040713 0%, #070b1c 24%, #080d1f 55%, #050816 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      width: 34rem;
+      height: 34rem;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .16;
+      pointer-events: none;
+      z-index: -2;
+    }
+    body::before { top: -10rem; right: -6rem; background: #4f74ff; }
+    body::after { bottom: -12rem; left: -8rem; background: #42d3ff; }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    ul { list-style: none; }
+
+    .container { width: var(--container); max-width: 100%; margin: 0 auto; }
+    h1, h2, h3{
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+    img, svg { max-width: 100%; }
+    .hero-copy,
+    .preview-copy,
+    .service-card,
+    .pricing-card,
+    .result-card,
+    .contact-card,
+    .catalog-item,
+    .proof-card,
+    .mini-panel,
+    .counter,
+    .faq-item,
+    .stats-box,
+    .testimonial-float,
+    .window,
+    .portfolio-main,
+    .card {
+      min-width: 0;
+    }
+    .section-heading h2,
+    .hero-copy h1,
+    .pricing-header h3,
+    .result-card h3,
+    .service-card h3,
+    .proof-card h3,
+    .contact-card h3,
+    .catalog-item h3,
+    .dashboard-card__top h3,
+    .portfolio-main h3,
+    .portfolio-side h3,
+    .faq-wrap h2,
+    .contact-copy h2,
+    .catalog-copy h2,
+    .cta-content h2 {
+      overflow-wrap: break-word;
+      word-break: normal;
+      hyphens: none;
+    }
+    .pricing-card p,
+    .pricing-list li,
+    .pricing-note,
+    .service-card p,
+    .service-card li,
+    .result-card p,
+    .contact-card p,
+    .catalog-item p,
+    .mini-panel p,
+    .faq-answer__inner,
+    .testimonial-float blockquote,
+    .testimonial-float footer,
+    .stats-box .metric-row span,
+    .plan-note,
+    .preview-copy p {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .section { padding: 96px 0; position: relative; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #d7defb;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      width: fit-content;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-2), var(--primary));
+      box-shadow: 0 0 18px rgba(66, 211, 255, 0.6);
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 18px;
+      max-width: 760px;
+      margin-bottom: 46px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 64ch;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(4, 7, 19, 0.86), rgba(4, 7, 19, 0.56));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.06rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand__mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      position: relative;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.02)),
+        linear-gradient(135deg, #4a67ff, #42d3ff 55%, #8e5bff);
+      box-shadow: 0 12px 34px rgba(64, 120, 255, .35);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .brand__mark::before,
+    .brand__mark::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.22);
+      opacity: .9;
+    }
+
+    .brand__mark::after {
+      inset: 14px 9px 9px 14px;
+      background: linear-gradient(135deg, rgba(255,255,255,.24), transparent 70%);
+      border: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a,
+    .footer-links a { transition: color var(--transition); }
+    .nav-links a:hover,
+    .footer-links a:hover { color: var(--text); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: none;
+      place-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .menu-toggle::before { transform: translateY(-6px); }
+    .menu-toggle::after { transform: translateY(6px); }
+    .menu-toggle.active span { opacity: 0; }
+    .menu-toggle.active::before { transform: translateY(2px) rotate(45deg); }
+    .menu-toggle.active::after { transform: translateY(0) rotate(-45deg); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition), opacity var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn--primary {
+      color: #07101c;
+      background: linear-gradient(135deg, #f9fbff, #b9d8ff 35%, #8be7ff 100%);
+      box-shadow: 0 20px 42px rgba(80, 180, 255, 0.22);
+    }
+
+    .btn--ghost {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .hero {
+      padding: 72px 0 34px;
+      position: relative;
+      overflow: clip;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 22px;
+      max-width: 680px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3.2rem, 6vw, 5.9rem);
+      line-height: .93;
+      letter-spacing: -0.08em;
+      font-weight: 900;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      max-width: 60ch;
+    }
+
+    .hero-actions,
+    .cta-actions,
+    .contact-actions,
+    .catalog-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-trust {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .hero-trust li,
+    .metric-tile,
+    .contact-card,
+    .service-chip,
+    .testimonial-float,
+    .result-card {
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.05);
+      border-radius: 22px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.16);
+    }
+
+    .hero-trust li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px;
+      color: #dce3ff;
+      font-size: .94rem;
+      font-weight: 500;
+    }
+
+    .hero-trust li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--success), var(--primary-2));
+      box-shadow: 0 0 16px rgba(117, 240, 197, .5);
+      flex: none;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      place-items: center;
+      perspective: 1400px;
+    }
+
+    .hero-orb {
+      position: absolute;
+      inset: 10% auto auto 2%;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.34), rgba(109,124,255,.18), transparent 72%);
+      filter: blur(10px);
+      opacity: .9;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-ring {
+      position: absolute;
+      right: 1%;
+      bottom: 10%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: inset 0 0 40px rgba(66,211,255,.08);
+      opacity: .75;
+      animation: spin-slow 18s linear infinite;
+    }
+
+    .hero-ring::before,
+    .hero-ring::after {
+      content: "";
+      position: absolute;
+      inset: 26px;
+      border-radius: inherit;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .hero-ring::after { inset: 52px; }
+
+    .dashboard {
+      position: relative;
+      width: min(100%, 580px);
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        linear-gradient(160deg, rgba(17, 25, 60, 0.95), rgba(8, 12, 28, 0.96));
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+      isolation: isolate;
+      transform: perspective(1200px) rotateY(-9deg) rotateX(5deg);
+    }
+
+    .dashboard::before {
+      content: "";
+      position: absolute;
+      inset: auto -30% -35% auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(66,211,255,.24), transparent 70%);
+      filter: blur(25px);
+      z-index: -1;
+    }
+
+    .dash-top,
+    .window__head,
+    .browser-dots,
+    .preview__header,
+    .result-card__head,
+    .pricing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .dash-top { margin-bottom: 18px; }
+    .browser-dots { gap: 8px; }
+
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .browser-bar {
+      flex: 1;
+      min-height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      color: var(--muted-2);
+      font-size: .9rem;
+      overflow: hidden;
+    }
+
+    .preview {
+      min-height: 420px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(66,211,255,.16), transparent 22%),
+        radial-gradient(circle at 75% 18%, rgba(109,124,255,.18), transparent 25%),
+        linear-gradient(180deg, #101839 0%, #0a1028 50%, #0a0e1d 100%);
+      position: relative;
+      display: grid;
+      padding: 26px;
+    }
+
+    .preview::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(255,255,255,.65), transparent 90%);
+    }
+
+    .preview__logo,
+    .brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .preview__logo-mark,
+    .brand-badge__icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6d7cff, #42d3ff, #8e5bff);
+      box-shadow: 0 10px 28px rgba(90, 120, 255, .4);
+    }
+
+    .preview__menu {
+      display: flex;
+      gap: 10px;
+      color: rgba(255,255,255,.82);
+      font-size: .78rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .preview__menu span,
+    .pill,
+    .service-card__label,
+    .price-badge,
+    .plan-chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      color: #dce3ff;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .preview__body {
+      position: relative;
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 18px;
+      align-items: end;
+    }
+
+    .preview-copy,
+    .feature-grid,
+    .pricing-grid,
+    .services-grid,
+    .portfolio-grid,
+    .results-grid,
+    .contact-grid,
+    .catalog-grid,
+    .proof-grid,
+    .service-strip,
+    .window-grid,
+    .counter-grid,
+    .faq-list,
+    .progress-list,
+    .cta-panel { display: grid; gap: 16px; }
+
+    .preview-copy { max-width: 300px; gap: 14px; }
+
+    .mini-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: .74rem;
+      font-weight: 700;
+      color: #d5e7ff;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+    }
+
+    .preview-copy h3 { font-size: clamp(1.7rem, 2vw, 2.6rem); line-height: 1; letter-spacing: -0.05em; }
+    .preview-copy p,
+    .mini-panel p,
+    .result-card p,
+    .service-chip p,
+    .service-card p,
+    .service-card li,
+    .reason p,
+    .step p,
+    .contact-card p,
+    .catalog-item p,
+    .proof-card p,
+    .pricing-card p,
+    .pricing-list li,
+    .portfolio-main p,
+    .portfolio-side p,
+    .faq-answer__inner,
+    .cta-content p,
+    .counter p,
+    .dashboard-card__top p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .97rem;
+    }
+
+    .preview-copy .stack { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .preview-copy .stack span {
+      padding: 8px 11px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.09);
+      color: #d9e3ff;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .preview-cards { display: grid; gap: 12px; }
+
+    .float-card,
+    .stats-card,
+    .metric-card,
+    .card,
+    .pricing-card,
+    .proof-card {
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
+        rgba(10, 14, 31, 0.74);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card,
+    .pricing-card,
+    .proof-card,
+    .result-card,
+    .contact-card,
+    .catalog-item { padding: 28px; }
+
+    .card::before,
+    .pricing-card::before,
+    .proof-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.08), transparent 35%);
+      pointer-events: none;
+    }
+
+    .float-card { padding: 18px; display: grid; gap: 12px; }
+    .float-card__tag { color: #dce7ff; font-size: .78rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+
+    .float-card__bar,
+    .progress-track,
+    .service-meter {
+      min-height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .float-card__bar::after,
+    .service-meter span {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 78%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+    }
+
+    .stats-card,
+    .metric-card {
+      position: absolute;
+      width: 220px;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .stats-card { right: -24px; top: 118px; animation: float 10s ease-in-out infinite; }
+    .metric-card { left: -26px; bottom: 76px; animation: float 8s ease-in-out infinite reverse; }
+
+    .stats-card strong,
+    .metric-card strong,
+    .counter strong,
+    .pricing-price,
+    .result-card strong,
+    .contact-card strong { font-size: 1.8rem; letter-spacing: -0.05em; }
+
+    .metric-row,
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      font-size: .88rem;
+      color: #dbe3ff;
+    }
+
+    .metric-row span:last-child,
+    .stats-row span:last-child { color: #fff; font-weight: 700; }
+
+    .service-strip { grid-template-columns: repeat(4, 1fr); margin-top: 24px; }
+
+    .service-chip {
+      padding: 22px;
+      display: grid;
+      gap: 10px;
+      min-height: 164px;
+    }
+
+    .service-chip__icon,
+    .service-card__icon,
+    .reason__icon,
+    .result-icon,
+    .catalog-icon {
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(109,124,255,.95), rgba(66,211,255,.95), rgba(142,91,255,.88));
+      box-shadow: 0 14px 30px rgba(72, 126, 255, .28);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      line-height: 1;
+      flex: none;
+    }
+
+    .service-chip__icon { width: 48px; height: 48px; }
+    .service-card__icon,
+    .reason__icon,
+    .result-icon,
+    .proof-icon,
+    .catalog-icon { width: 56px; height: 56px; }
+
+    .service-chip h3,
+    .reason h3,
+    .mini-panel strong,
+    .result-card h3,
+    .proof-card h3,
+    .catalog-item h3,
+    .pricing-card h3,
+    .contact-card h3,
+    .step h3,
+    .service-card h3 { letter-spacing: -0.04em; }
+
+    .reasons,
+    .process-wrap,
+    .pricing-wrap,
+    .faq-layout,
+    .cta-content { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+
+    .reason-stack,
+    .showcase,
+    .timeline,
+    .dashboard-card,
+    .portfolio-side { display: grid; gap: 18px; height: 100%; }
+
+    .reason {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .reason__icon::after,
+    .proof-icon::after,
+    .catalog-icon::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.72);
+      opacity: .8;
+    }
+
+    .showcase-top,
+    .contact-wrap,
+    .catalog-wrap {
+      min-height: 320px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(66,211,255,.14), transparent 24%),
+        radial-gradient(circle at 82% 22%, rgba(109,124,255,.18), transparent 28%),
+        linear-gradient(180deg, #0c1230 0%, #090d1d 100%);
+    }
+
+    .window {
+      margin-top: auto;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .pill-group { display: flex; flex-wrap: wrap; gap: 10px; }
+    .window-grid { grid-template-columns: 1fr 1fr; }
+
+    .mini-panel {
+      min-height: 128px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .service-card {
+      padding: 30px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+        rgba(10, 14, 31, 0.72);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(66,211,255,.55), transparent);
+      opacity: .75;
+    }
+
+    .service-card__top,
+    .contact-card__head,
+    .catalog-item__head,
+    .proof-card__head { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+
+    .service-card ul,
+    .pricing-list,
+    .catalog-list { display: grid; gap: 12px; }
+
+    .service-card li,
+    .pricing-list li,
+    .catalog-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .service-card li::before,
+    .pricing-list li::before,
+    .catalog-list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-2), var(--primary));
+      flex: none;
+      margin-top: .58em;
+      box-shadow: 0 0 16px rgba(66,211,255,.45);
+    }
+
+    .plan-foot,
+    .pricing-footer,
+    .catalog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .plan-note,
+    .pricing-note { color: #dfe5ff; font-size: .92rem; font-weight: 600; }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+
+    .step__number {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, rgba(109,124,255,.95), rgba(66,211,255,.95));
+      color: #08111f;
+      box-shadow: 0 14px 28px rgba(70, 135, 255, .22);
+    }
+
+    .dashboard-card__top h3,
+    .portfolio-main h3,
+    .portfolio-side h3,
+    .cta-content h2,
+    .faq-wrap h2,
+    .contact-copy h2,
+    .catalog-copy h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.05; letter-spacing: -0.05em; }
+
+  .counter-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+}
+
+.counter{
+  padding:18px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  display:grid;
+  align-content:start;
+  gap:12px;
+  min-height:170px;
+  min-width:0;
+}
+
+.counter strong{
+  display:block;
+  font-size:2rem;
+  line-height:1;
+  letter-spacing:-0.04em;
+}
+
+.counter p{
+  font-size:.92rem;
+  line-height:1.55;
+  color:var(--muted);
+}
+
+    .progress-item { display: grid; gap: 10px; }
+    .progress-head { display: flex; justify-content: space-between; gap: 12px; color: #dbe4ff; font-weight: 600; font-size: .92rem; }
+    .progress-track span { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: linear-gradient(90deg, var(--primary), var(--primary-2)); }
+
+    .results-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .result-card { display: grid; gap: 16px; min-height: 240px; min-width: 0; align-content: start; }
+    .result-card h3,
+    .contact-card h3,
+    .catalog-item h3,
+    .stats-box h3,
+    .testimonial-float__stars {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.2;
+    }
+    .result-card p,
+    .contact-card p,
+    .catalog-item p,
+    .testimonial-float blockquote,
+    .testimonial-float footer,
+    .stats-box .metric-row span {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .result-card__head { align-items: flex-start; }
+    .result-icon { display: grid; place-items: center; }
+    .result-card strong {
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      line-height: 1.05;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+   .pricing-wrap{
+  display:grid;
+  grid-template-columns:minmax(0, 420px) minmax(0, 1fr);
+  gap:22px;
+  align-items:start;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(220px, 1fr));
+  gap:16px;
+  align-items:stretch;
+  min-width:0;
+}
+
+.pricing-card{
+  display:grid;
+  gap:18px;
+  padding:24px;
+  min-width:0;
+  align-content:start;
+}
+
+.pricing-card.featured{
+  border-color: rgba(139, 231, 255, .38);
+  box-shadow: 0 30px 90px rgba(59, 135, 255, .28);
+  transform: translateY(-6px);
+}
+
+.pricing-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.pricing-header h3{
+  flex:1 1 auto;
+  min-width:0;
+  font-size:clamp(1.45rem, 1.8vw, 1.9rem);
+  line-height:1.02;
+  letter-spacing:-0.04em;
+  word-break:normal;
+  overflow-wrap:normal;
+  hyphens:none;
+}
+
+.price-badge,
+.plan-chip{
+  flex:0 0 auto;
+  white-space:nowrap;
+  text-align:center;
+  line-height:1.1;
+}
+
+.pricing-price{
+  font-size:clamp(2.2rem, 3vw, 3rem);
+  line-height:1;
+  letter-spacing:-0.05em;
+  font-variant-numeric: tabular-nums;
+  white-space:nowrap;
+  word-break:normal;
+  overflow-wrap:normal;
+}
+
+.pricing-price small{
+  display:block;
+  margin-top:8px;
+  font-size:.9rem;
+  color:var(--muted);
+  font-weight:600;
+  letter-spacing:0;
+  white-space:normal;
+}
+
+.pricing-card p,
+.pricing-list li,
+.pricing-note{
+  min-width:0;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+.pricing-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+    .proof-grid { grid-template-columns: repeat(3, 1fr); }
+    .proof-card { display: grid; gap: 16px; min-height: 250px; }
+
+    .portfolio-grid { grid-template-columns: 1.08fr .92fr; }
+    .portfolio-main {
+      min-height: 470px;
+      padding: 30px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(66,211,255,.14), transparent 22%),
+        radial-gradient(circle at 84% 22%, rgba(109,124,255,.18), transparent 30%),
+        linear-gradient(180deg, rgba(18, 27, 59, .98), rgba(8, 12, 28, .96));
+    }
+
+    .portfolio-screen {
+      min-height: 240px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        linear-gradient(160deg, #0d1533, #0a0f24);
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .portfolio-screen__hero {
+      min-height: 116px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(109,124,255,.9), rgba(66,211,255,.82), rgba(142,91,255,.88));
+      box-shadow: 0 20px 40px rgba(74, 110, 255, .25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-screen__hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, rgba(255,255,255,.3), transparent 35%, transparent 65%, rgba(255,255,255,.12));
+      animation: shimmer 5.5s linear infinite;
+    }
+
+    .portfolio-screen__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .portfolio-screen__grid span {
+      min-height: 84px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .stats-box .metric-row { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .stats-box .metric-row:last-child { border-bottom: 0; }
+
+    .testimonial-float { padding: 20px; display: grid; gap: 14px; min-height: 180px; }
+    .testimonial-float__stars { letter-spacing: .15em; color: #8be7ff; font-size: .96rem; }
+    .testimonial-float blockquote { line-height: 1.85; color: #eef3ff; font-size: .97rem; }
+    .testimonial-float footer { color: var(--muted); font-size: .88rem; font-weight: 600; }
+
+    .contact-grid,
+    .catalog-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    .contact-wrap,
+    .catalog-wrap,
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,.09);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-wrap,
+    .catalog-wrap,
+    .cta-box {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(66,211,255,.18), transparent 25%),
+        radial-gradient(circle at 85% 20%, rgba(109,124,255,.18), transparent 30%),
+        linear-gradient(140deg, rgba(16, 24, 57, 0.95), rgba(8, 13, 31, 0.98));
+    }
+
+    .contact-wrap::before,
+    .catalog-wrap::before,
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      inset: auto -12% -26% auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(66,211,255,.24), transparent 70%);
+      filter: blur(18px);
+    }
+
+    .contact-copy,
+    .catalog-copy { position: relative; z-index: 1; display: grid; gap: 18px; }
+    .contact-cards { display: grid; gap: 14px; }
+    .contact-card { padding: 22px; display: grid; gap: 8px; }
+
+    .catalog-item { display: grid; gap: 16px; }
+    .catalog-item__head { align-items: flex-start; }
+
+    .faq-layout { grid-template-columns: .9fr 1.1fr; }
+    .faq-wrap { position: sticky; top: 110px; display: grid; gap: 16px; }
+    .faq-list { gap: 16px; }
+
+    .faq-item {
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .faq-question span:last-child {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 1.2rem;
+      flex: none;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .faq-item.active .faq-question span:last-child { transform: rotate(45deg); background: rgba(66,211,255,.12); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 280ms ease; }
+    .faq-answer__inner { padding: 0 24px 24px; }
+
+    .cta-content { position: relative; z-index: 1; }
+    .site-footer { padding: 26px 0 40px; }
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .blur-line {
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(66,211,255,.5), transparent);
+      opacity: .7;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @media (max-width: 1280px) {
+      .pricing-wrap {
+        grid-template-columns: 1fr;
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 1160px) {
+  .hero-grid,
+  .reasons,
+  .process-wrap,
+  .portfolio-grid,
+  .faq-layout,
+  .contact-grid,
+  .catalog-grid,
+  .cta-content {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .pricing-grid{
+    grid-template-columns:repeat(3, minmax(0,1fr));
+  }
+
+  .hero-visual { min-height: auto; }
+  .dashboard { transform: none; }
+  .faq-wrap { position: static; }
+
+  .service-strip,
+  .services-grid,
+  .results-grid,
+  .counter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-side { grid-template-columns: 1fr 1fr; }
+}
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions .btn--ghost { display: none; }
+      .menu-toggle { display: grid; }
+
+      .mobile-panel {
+        position: fixed;
+        inset: 84px 16px auto 16px;
+        padding: 18px;
+        border-radius: 24px;
+        border: 1px solid rgba(255,255,255,0.09);
+        background: rgba(8, 12, 28, 0.96);
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 12px;
+        transform-origin: top;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px) scale(.98);
+        transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+        z-index: 45;
+      }
+      .mobile-panel.active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+      .mobile-panel a,
+      .mobile-panel .btn,
+      .btn { width: 100%; }
+      .mobile-panel a {
+        padding: 12px 14px;
+        border-radius: 14px;
+        color: var(--text);
+        background: rgba(255,255,255,.03);
+        border: 1px solid rgba(255,255,255,.05);
+      }
+
+      .preview__header,
+      .service-card__top,
+      .pricing-header,
+      .plan-foot,
+      .pricing-footer,
+      .contact-card__head,
+      .catalog-item__head,
+      .result-card__head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .preview__menu {
+        justify-content: flex-start;
+      }
+
+      .stats-card,
+      .metric-card {
+        position: static;
+        width: auto;
+        animation: none;
+      }
+
+      .hero-visual { gap: 18px; }
+      .service-chip,
+      .service-card,
+      .card,
+      .pricing-card,
+      .contact-wrap,
+      .catalog-wrap,
+      .cta-box,
+      .result-card {
+        padding: 22px;
+      }
+
+      .pricing-card.featured { transform: none; }
+      .pricing-header h3,
+      .service-card h3,
+      .result-card h3,
+      .contact-card h3,
+      .catalog-item h3,
+      .stats-box h3 {
+        font-size: 1.25rem;
+      }
+
+      .pricing-price {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        white-space: nowrap;
+      }
+
+      .price-badge,
+      .plan-chip,
+      .service-card__label,
+      .pill,
+      .preview__menu span {
+        white-space: normal;
+      }
+      .pricing-grid{
+  grid-template-columns:1fr;
+}
+
+.counter-grid{
+  grid-template-columns:1fr;
+}
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 72px 0; }
+      .nav { min-height: 72px; }
+      .hero { padding-top: 32px; }
+      .container { width: min(100% - 20px, 1180px); }
+
+      .hero-copy h1 {
+        font-size: clamp(2.35rem, 12vw, 3.2rem);
+        line-height: .96;
+        letter-spacing: -0.06em;
+      }
+
+      .section-heading h2,
+      .faq-wrap h2,
+      .contact-copy h2,
+      .catalog-copy h2,
+      .cta-content h2,
+      .portfolio-main h3,
+      .portfolio-side h3,
+      .dashboard-card__top h3 {
+        font-size: clamp(1.65rem, 9vw, 2.2rem);
+        line-height: 1.06;
+      }
+
+      .hero-copy p,
+      .section-heading p,
+      .service-card p,
+      .service-card li,
+      .result-card p,
+      .contact-card p,
+      .catalog-item p,
+      .mini-panel p,
+      .faq-answer__inner,
+      .pricing-card p,
+      .pricing-list li,
+      .pricing-note,
+      .testimonial-float blockquote {
+        font-size: .93rem;
+        line-height: 1.62;
+      }
+
+      .hero-actions,
+      .cta-actions,
+      .contact-actions,
+      .catalog-actions {
+        flex-direction: column;
+      }
+
+      .preview,
+      .portfolio-main,
+      .showcase-top,
+      .cta-box,
+      .contact-wrap,
+      .catalog-wrap {
+        border-radius: 24px;
+      }
+
+      .dashboard {
+        padding: 14px;
+        border-radius: 24px;
+      }
+
+      .preview {
+        padding: 16px;
+        min-height: auto;
+      }
+
+      .preview-copy h3 { font-size: 1.45rem; }
+      .preview__menu span,
+      .price-badge,
+      .plan-chip,
+      .service-card__label,
+      .pill {
+        font-size: .72rem;
+        padding: 6px 9px;
+      }
+
+      .pricing-card,
+      .service-card,
+      .result-card,
+      .contact-card,
+      .catalog-item,
+      .card,
+      .service-chip,
+      .mini-panel,
+      .counter {
+        padding: 18px;
+      }
+
+      .pricing-price {
+        font-size: clamp(1.85rem, 11vw, 2.45rem);
+        white-space: nowrap;
+      }
+      .pricing-price small { font-size: .86rem; margin-top: 8px; }
+      .result-card strong { font-size: 1.35rem; }
+      .service-chip__icon,
+      .service-card__icon,
+      .reason__icon,
+      .result-icon,
+      .catalog-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+
+      .portfolio-screen__grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-screen__grid span {
+        min-height: 64px;
+        font-size: 24px;
+      }
+
+      .footer-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .email-highlight{
+    display: inline-block;
+    margin-top: 6px;
+    padding: 10px 14px;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(92,115,255,0.25),
+        rgba(60,170,255,0.25)
+    );
+
+    border: 1px solid rgba(120,150,255,0.35);
+
+    transition: all .25s ease;
+}
+
+.email-highlight:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        rgba(92,115,255,0.45),
+        rgba(60,170,255,0.45)
+    );
+
+    border-color: rgba(120,150,255,0.6);
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.logo img{
+    height:40px;
+    width:auto;
+    display:block;
+}
+
+.logo-text{
+    font-size:1.05rem;
+    font-weight:700;
+    letter-spacing:0.3px;
+    background:linear-gradient(90deg,#6a8cff,#48c6ef);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+@media (max-width:768px){
+    .logo img{
+        height:34px;
+    }
+
+    .logo-text{
+        font-size:.95rem;
+    }
+}
+.mobile-panel{
+  display:none;
+}
+
+body.menu-open{
+  overflow:hidden;
+}
+
+@media (max-width: 900px){
+  .mobile-panel{
+    position: fixed;
+    top: 82px;
+    left: 12px;
+    right: 12px;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(8,12,28,.96);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px) scale(.98);
+    transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+    z-index: 120;
+  }
+
+  .mobile-panel.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .mobile-panel a,
+  .mobile-panel .btn{
+    width: 100%;
+  }
+
+  .mobile-panel a{
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.05);
+  }
+
+  .hero-grid,
+  .reasons,
+  .process-wrap,
+  .portfolio-grid,
+  .faq-layout,
+  .contact-grid,
+  .catalog-grid,
+  .cta-content{
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .results-grid,
+  .counter-grid,
+  .window-grid,
+  .service-strip,
+  .portfolio-side,
+  .cta-panel{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .pricing-wrap{
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .hero-copy h1{
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .section-heading h2{
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+  }
+
+  .service-card,
+  .pricing-card,
+  .result-card,
+  .contact-card,
+  .catalog-item,
+  .counter,
+  .mini-panel,
+  .service-chip{
+    padding: 18px;
+  }
+
+  .pricing-card.featured{
+    transform:none;
+  }
+
+  .dashboard{
+    transform:none;
+  }
+
+  .stats-card,
+  .metric-card{
+    position: static;
+    width: auto;
+    animation: none;
+  }
+}
+
+@media (max-width: 640px){
+  .services-grid,
+  .results-grid,
+  .counter-grid,
+  .window-grid,
+  .service-strip,
+  .portfolio-side,
+  .cta-panel,
+  .pricing-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1{
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    line-height: .98;
+  }
+
+  .section-heading h2,
+  .faq-wrap h2,
+  .contact-copy h2,
+  .catalog-copy h2,
+  .cta-content h2,
+  .dashboard-card__top h3,
+  .portfolio-main h3{
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .hero-copy p,
+  .section-heading p,
+  .service-card p,
+  .service-card li,
+  .pricing-card p,
+  .pricing-list li,
+  .result-card p,
+  .contact-card p,
+  .catalog-item p,
+  .mini-panel p,
+  .counter p{
+    font-size: .92rem;
+    line-height: 1.55;
+  }
+
+  .pricing-price{
+    font-size: clamp(1.9rem, 10vw, 2.4rem);
+  }
+
+  .btn{
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: .92rem;
+  }
+
+  .hero-actions,
+  .cta-actions,
+  .contact-actions,
+  .catalog-actions{
+    flex-direction: column;
+  }
+}
+  </style>
+</head>
+<link rel="icon" href="img/logo.png">
+<body>
+  <header class="site-header">
+
+  <div class="container nav">
+
+    <!-- LOGO -->
+    <a href="#inicio" class="logo">
+    <img src="img/logo.svg" alt="Impulso Digital">
+    <span class="logo-text">Impulso Digital</span>
+</a>
+
+    <!-- MENU DESKTOP -->
+    <nav class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Precios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- BOTONES -->
+    <div class="nav-actions">
+        <a href="#planes" class="btn btn--ghost">Ver precios</a>
+
+        <a href="https://wa.me/5255586673152"
+           target="_blank"
+           class="btn btn--primary">
+           Cotizar proyecto
+        </a>
+    </div>
+
+    <!-- BOTON MENU MOVIL -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" type="button">
+    <span></span>
+</button>
+
+  </div>
+
+</header>
+<div class="mobile-panel" id="mobilePanel">
+    <a href="#servicios">Servicios</a>
+    <a href="#planes">Precios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/5255586673152" target="_blank" class="btn btn--primary">Cotizar proyecto</a>
+</div>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Diseño web premium para negocios que quieren crecer</span>
+          <h1>Convierte tu negocio en una marca que se vea profesional desde el primer segundo.</h1>
+          <p>
+            En Impulso Digital desarrollo páginas web con estructura estratégica, diseño visual fuerte y una experiencia enfocada en que tu negocio se vea más confiable, moderno y listo para vender en internet.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/5255586673152" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+            <a href="#planes" class="btn btn--ghost">Ver planes y precios</a>
+          </div>
+
+          <ul class="hero-trust" aria-label="Beneficios principales">
+            <li>Diseño visual de alto nivel</li>
+            <li>Estructura pensada para convertir</li>
+            <li>Adaptación completa a móvil</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="hero-orb"></div>
+          <div class="hero-ring"></div>
+
+          <div class="dashboard">
+            <div class="dash-top">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-bar">impulsodigital.web.com / diseño web profesional</div>
+            </div>
+
+            <div class="preview">
+              <div class="preview__header">
+                <div class="preview__logo">
+                  <span class="preview__logo-mark" style="display:flex;align-items:center;justify-content:center;font-size:16px;color:white;">🚀</span>
+                  <span>Impulso Digital</span>
+                </div>
+                <div class="preview__menu">
+                  <span>Inicio</span>
+                  <span>Planes</span>
+                  <span>Contacto</span>
+                </div>
+              </div>
+
+              <div class="preview__body">
+                <div class="preview-copy">
+                  <span class="mini-badge">Sitios hechos para vender mejor</span>
+                  <h3>Diseño web con lógica comercial.</h3>
+                  <p>La estética importa, pero la diferencia real está en cómo se ordena el contenido para transmitir valor y facilitar el contacto.</p>
+                  <div class="stack">
+                    <span>UI premium</span>
+                    <span>Copy claro</span>
+                    <span>Conversión</span>
+                  </div>
+                </div>
+
+                <div class="preview-cards">
+                  <div class="float-card">
+                    <span class="float-card__tag">Servicio destacado</span>
+                    <strong>Web empresarial</strong>
+                    <div class="float-card__bar"></div>
+                    <p>Ideal para negocios que necesitan verse sólidos y explicar mejor lo que hacen.</p>
+                  </div>
+                  <div class="float-card">
+                    <span class="float-card__tag">Resultado</span>
+                    <strong>Más confianza desde el primer vistazo</strong>
+                    <div class="float-card__bar"></div>
+                    <p>Una estructura mejor resuelta hace que tu negocio se perciba más profesional.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-card">
+            <strong>+ impacto</strong>
+            <p>Una página bien diseñada aumenta la percepción de valor y hace que el negocio se vea mucho más serio.</p>
+            <div class="float-card__bar"></div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-row"><span>Responsive</span><span>100%</span></div>
+            <div class="metric-row"><span>Jerarquía visual</span><span>Alta</span></div>
+            <div class="metric-row"><span>Enfoque</span><span>Conversión</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-strip reveal">
+        <article class="service-chip">
+          <span class="service-chip__icon">🎯</span>
+          <h3>Landing page</h3>
+          <p>Para campañas, promociones o negocios que necesitan captar mensajes con una sola página.</p>
+        </article>
+        <article class="service-chip">
+          <span class="service-chip__icon">🏢</span>
+          <h3>Web empresarial</h3>
+          <p>Presencia profesional para mostrar servicios, explicar tu negocio y dar más confianza.</p>
+        </article>
+        <article class="service-chip">
+          <span class="service-chip__icon">🛒</span>
+          <h3>Tienda en línea</h3>
+          <p>Una base visual limpia para vender productos con catálogo, carrito y estructura clara.</p>
+        </article>
+        <article class="service-chip">
+          <span class="service-chip__icon">🛠️</span>
+          <h3>Rediseño estratégico</h3>
+          <p>Mejoras visuales y estructurales para proyectos que ya existen pero hoy se ven flojos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="ventajas">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Por qué esta web se siente más seria</span>
+          <h2>No basta con tener presencia online. Tiene que proyectar valor de inmediato.</h2>
+          <p>
+            La base de un diseño fuerte no está solo en los efectos visuales. Está en la jerarquía, en la claridad del mensaje, en los bloques bien resueltos y en la sensación de que detrás hay una marca real, no una plantilla genérica.
+          </p>
+        </div>
+
+        <div class="reasons">
+          <div class="reason-stack card reveal">
+            <article class="reason">
+              <span class="reason__icon">🧭</span>
+              <div>
+                <h3>Jerarquía visual fuerte</h3>
+                <p>El visitante entiende rápido qué ofreces, por qué importa y cuál es el siguiente paso que debe tomar.</p>
+              </div>
+            </article>
+
+            <article class="reason">
+              <span class="reason__icon">✨</span>
+              <div>
+                <h3>Diseño premium con dirección</h3>
+                <p>No se trata de poner brillo por ponerlo. Cada bloque tiene una intención clara dentro de la experiencia.</p>
+              </div>
+            </article>
+
+            <article class="reason">
+              <span class="reason__icon">📈</span>
+              <div>
+                <h3>Enfoque comercial real</h3>
+                <p>La página está construida para dar mejor impresión, explicar mejor el servicio y facilitar el contacto.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="showcase reveal">
+            <div class="card showcase-top">
+              <div class="window">
+                <div class="window__head">
+                  <span>Componentes clave</span>
+                  <span class="pill">Experiencia premium</span>
+                </div>
+                <div class="pill-group">
+                  <span class="pill">Espacio visual</span>
+                  <span class="pill">Secciones fuertes</span>
+                  <span class="pill">CTA visibles</span>
+                </div>
+                <div class="window-grid">
+                  <article class="mini-panel">
+                    <strong>Diseño limpio</strong>
+                    <p>Mucho aire visual para que el contenido respire y no parezca saturado ni improvisado.</p>
+                  </article>
+                  <article class="mini-panel">
+                    <strong>Tarjetas potentes</strong>
+                    <p>Bloques con presencia suficiente para transmitir nivel y profesionalismo.</p>
+                  </article>
+                  <article class="mini-panel">
+                    <strong>Mensaje claro</strong>
+                    <p>Textos más directos, menos relleno y mayor orientación a resultados.</p>
+                  </article>
+                  <article class="mini-panel">
+                    <strong>Percepción de marca</strong>
+                    <p>Se siente más como una marca consolidada y menos como una página hecha al vapor.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Lo que una buena web cambia</span>
+          <h2>Una página profesional no es adorno. Cambia la forma en que perciben tu negocio.</h2>
+          <p>
+            Cuando la presencia digital está bien resuelta, el negocio se ve más confiable, más claro y con más capacidad de competir frente a otras opciones del mercado.
+          </p>
+        </div>
+
+        <div class="results-grid reveal">
+          <article class="result-card">
+            <div class="result-card__head">
+              <span class="result-icon">🤝</span>
+              <strong>+ confianza</strong>
+            </div>
+            <h3>Mejor impresión inicial</h3>
+            <p>Una buena primera vista hace que la marca se perciba más seria y mejor preparada para vender.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__head">
+              <span class="result-icon">💡</span>
+              <strong>+ claridad</strong>
+            </div>
+            <h3>Mensaje mejor entendido</h3>
+            <p>Si el usuario comprende rápido qué haces y cómo ayudas, es más fácil que te contacte.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__head">
+              <span class="result-icon">💎</span>
+              <strong>+ valor</strong>
+            </div>
+            <h3>Percepción más premium</h3>
+            <p>La estructura, el estilo visual y el ritmo del contenido elevan el valor percibido del negocio.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__head">
+              <span class="result-icon">💬</span>
+              <strong>+ contacto</strong>
+            </div>
+            <h3>Más facilidad para escribirte</h3>
+            <p>Botones visibles, flujo claro y llamadas a la acción colocadas donde realmente importan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Servicios principales</span>
+          <h2>Tres formatos claros para distintos tipos de negocio.</h2>
+          <p>La idea no es meter secciones por meter. Cada servicio responde a una necesidad distinta y debe comunicarse con una estructura visual acorde al nivel del proyecto.</p>
+        </div>
+
+        <div class="services-grid reveal">
+          <article class="service-card">
+            <div class="service-card__top">
+              <span class="service-card__icon">🎯</span>
+              <span class="service-card__label">Captación rápida</span>
+            </div>
+            <div>
+              <h3>Landing Page</h3>
+              <p>Ideal para promocionar un servicio, campaña o negocio específico con una sola página enfocada en convertir visitas en mensajes.</p>
+            </div>
+            <ul>
+              <li>Sección principal con impacto visual.</li>
+              <li>Presentación del servicio o propuesta de valor.</li>
+              <li>Llamadas a la acción visibles en puntos clave.</li>
+              <li>Botón directo a WhatsApp y cierre de contacto.</li>
+            </ul>
+            <div class="service-meter"><span style="width:84%"></span></div>
+            <div class="plan-foot">
+              <span class="plan-note">Perfecta para empezar con fuerza</span>
+              <a href="https://wa.me/5255586673152?text=Hola,%20me%20interesa%20la%20Landing%20Page" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Quiero esta</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__top">
+              <span class="service-card__icon">🏢</span>
+              <span class="service-card__label">Presencia completa</span>
+            </div>
+            <div>
+              <h3>Web Empresarial</h3>
+              <p>Diseñada para negocios que necesitan verse sólidos, explicar bien lo que hacen y dar una imagen mucho más confiable frente a clientes.</p>
+            </div>
+            <ul>
+              <li>Inicio, servicios, sobre nosotros, galería y contacto.</li>
+              <li>Formulario, integración con redes y SEO básico.</li>
+              <li>Diseño adaptable a celular y optimización ligera.</li>
+              <li>Estructura ideal para negocios locales o profesionales.</li>
+            </ul>
+            <div class="service-meter"><span style="width:92%"></span></div>
+            <div class="plan-foot">
+              <span class="plan-note">La opción más equilibrada</span>
+              <a href="https://wa.me/5255586673152?text=Hola,%20me%20interesa%20la%20Web%20Empresarial" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Quiero esta</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__top">
+              <span class="service-card__icon">🛒</span>
+              <span class="service-card__label">Venta digital</span>
+            </div>
+            <div>
+              <h3>Tienda en Línea</h3>
+              <p>Para proyectos que ya necesitan mostrar catálogo, organizar productos y construir una base inicial para vender online con orden.</p>
+            </div>
+            <ul>
+              <li>Catálogo de productos y experiencia de compra clara.</li>
+              <li>Carrito y métodos de pago básicos.</li>
+              <li>Panel de administración y adaptación móvil.</li>
+              <li>Diseño visual limpio para que el producto destaque.</li>
+            </ul>
+            <div class="service-meter"><span style="width:88%"></span></div>
+            <div class="plan-foot">
+              <span class="plan-note">Pensada para crecer después</span>
+              <a href="https://wa.me/5255586673152?text=Hola,%20me%20interesa%20la%20Tienda%20en%20L%C3%ADnea" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Quiero esta</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planes">
+      <div class="container pricing-wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Planes y precios</span>
+          <h2>Precios claros para que el cliente entienda rápido cuál opción le conviene.</h2>
+          
+        </div>
+
+        <div class="pricing-grid reveal">
+          <article class="pricing-card">
+            <div class="pricing-header">
+              <h3>Landing Page</h3>
+              <span class="plan-chip">Entrada fuerte</span>
+            </div>
+            <div class="pricing-price">$3,500 <small>MXN</small></div>
+            <p>Una sola página bien resuelta para captar mensajes, explicar un servicio y mover al cliente a la acción.</p>
+            <ul class="pricing-list">
+              <li>Diseño personalizado</li>
+              <li>Sección principal impactante</li>
+              <li>CTA visibles y WhatsApp</li>
+              <li>Adaptación móvil</li>
+            </ul>
+            <div class="pricing-footer">
+              <span class="pricing-note">Ideal para empezar</span>
+              <a href="https://wa.me/5255586673152?text=Hola,%20quiero%20cotizar%20la%20Landing%20Page%20de%20$3,500" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Solicitar</a>
+            </div>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="pricing-header">
+              <h3>Web Empresarial</h3>
+              <span class="price-badge">Más recomendada</span>
+            </div>
+            <div class="pricing-price">$5,400 <small>MXN</small></div>
+            <p>La mejor opción para negocios que necesitan verse profesionales, explicar bien lo que hacen y dar más confianza.</p>
+            <ul class="pricing-list">
+              <li>Inicio, servicios y sobre nosotros</li>
+              <li>Galería, contacto y formulario</li>
+              <li>SEO básico y adaptación móvil</li>
+              <li>Integración con redes</li>
+            </ul>
+            <div class="pricing-footer">
+              <span class="pricing-note">Mejor equilibrio entre imagen y alcance</span>
+              <a href="https://wa.me/5255586673152?text=Hola,%20quiero%20cotizar%20la%20Web%20Empresarial%20de%20$5,400" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Solicitar</a>
+            </div>
+          </article>
+
+          <article class="pricing-card">
+            <div class="pricing-header">
+              <h3>Tienda en Línea</h3>
+              <span class="plan-chip">Venta online</span>
+            </div>
+            <div class="pricing-price">$7,900 <small>MXN</small></div>
+            <p>Para proyectos que necesitan catálogo, carrito y una base real para vender con una experiencia más ordenada.</p>
+            <ul class="pricing-list">
+              <li>Catálogo de productos</li>
+              <li>Carrito y pagos básicos</li>
+              <li>Panel de administración</li>
+              <li>Diseño limpio y responsive</li>
+            </ul>
+            <div class="pricing-footer">
+              <span class="pricing-note">Pensada para crecimiento</span>
+              <a href="https://wa.me/5255586673152?text=Hola,%20quiero%20cotizar%20la%20Tienda%20en%20L%C3%ADnea%20de%20$7,900" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Solicitar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="container process-wrap">
+        <div>
+          <div class="section-heading reveal">
+            <span class="eyebrow">Proceso de trabajo</span>
+            <h2>Una buena página no sale de improvisar bloques al azar.</h2>
+            <p>El diseño premium se siente así porque detrás hay orden: objetivo, estructura, desarrollo y entrega final con una visión clara.</p>
+          </div>
+
+          <div class="timeline card reveal">
+            <article class="step">
+              <div class="step__number">01</div>
+              <div>
+                <h3>Brief y objetivo</h3>
+                <p>Se define el tipo de negocio, su meta principal y lo que la web debe lograr: mensajes, confianza, ventas o presencia profesional.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step__number">02</div>
+              <div>
+                <h3>Estructura estratégica</h3>
+                <p>Se ordenan secciones, contenido, llamados a la acción y jerarquías para que la experiencia tenga lógica y fuerza visual.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step__number">03</div>
+              <div>
+                <h3>Diseño y desarrollo</h3>
+                <p>Se construye una interfaz premium, adaptable y consistente. Nada de bloques sin intención o efectos puestos por adorno.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step__number">04</div>
+              <div>
+                <h3>Entrega y ajuste final</h3>
+                <p>Se revisa el resultado, se pulen detalles y se deja lista para usarse como una presencia digital mucho más seria.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="card dashboard-card reveal">
+          <div class="dashboard-card__top">
+            <div>
+              <h3>Diseño con lógica comercial, no solo decoración.</h3>
+              <p>El enfoque aquí es combinar diseño visual fuerte con una estructura comercial clara: explicar el servicio, generar confianza y llevar al visitante a contactar fácilmente.</p>
+            </div>
+          </div>
+
+          <div class="counter-grid">
+            <article class="counter">
+              <strong>1 </strong>
+              <p>Objetivo principal por página. Sin meter de todo.</p>
+            </article>
+            <article class="counter">
+              <strong>4</strong>
+              <p>Etapas claras para evitar cambios sin rumbo.</p>
+            </article>
+            <article class="counter">
+              <strong>100%</strong>
+              <p>Adaptable a móvil desde el inicio del diseño.</p>
+            </article>
+          </div>
+
+          <div class="progress-list">
+            <div class="progress-item">
+              <div class="progress-head"><span>Claridad del mensaje</span><span>92%</span></div>
+              <div class="progress-track"><span style="width:92%"></span></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-head"><span>Impacto visual</span><span>95%</span></div>
+              <div class="progress-track"><span style="width:95%"></span></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-head"><span>Percepción profesional</span><span>97%</span></div>
+              <div class="progress-track"><span style="width:97%"></span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container portfolio-grid">
+        <article class="card portfolio-main reveal">
+          <span class="eyebrow">Qué incluye tu proyecto</span>
+          <h3>Más que una página bonita: una presencia digital bien pensada.</h3>
+          <p>El objetivo es que tu negocio se vea profesional, explique bien lo que ofrece y facilite el contacto. Por eso cada proyecto se desarrolla con estructura, diseño visual sólido y enfoque real en conversión.</p>
+          <div class="window-grid">
+            <article class="mini-panel">
+              <strong>Diseño personalizado</strong>
+              <p>La página se adapta a tu negocio, a tu estilo visual y a la manera en que quieres presentarte frente a tus clientes.</p>
+            </article>
+            <article class="mini-panel">
+              <strong>Versión responsive</strong>
+              <p>Todo queda optimizado para celular, tablet y computadora, sin depender de una sola vista.</p>
+            </article>
+            <article class="mini-panel">
+              <strong>Botones de contacto</strong>
+              <p>WhatsApp, correo y llamadas a la acción integradas para que el usuario tenga claro cómo comunicarse contigo.</p>
+            </article>
+            <article class="mini-panel">
+              <strong>Estructura estratégica</strong>
+              <p>No se colocan secciones por relleno. Cada bloque tiene una función concreta dentro de la página.</p>
+            </article>
+          </div>
+          <div class="portfolio-screen">
+            <div class="portfolio-screen__hero"></div>
+            <div class="portfolio-screen__grid">
+              <span>🖥️</span><span>📱</span><span>⚙️</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="portfolio-side reveal">
+          <article class="card stats-box">
+            <h3>Lo que cambia</h3>
+            <div class="metric-row"><span>Imagen de marca</span><span>Más sólida</span></div>
+            <div class="metric-row"><span>Confianza inicial</span><span>Más alta</span></div>
+            <div class="metric-row"><span>Percepción de valor</span><span>Más premium</span></div>
+            <div class="metric-row"><span>Contacto directo</span><span>Más fácil</span></div>
+          </article>
+
+          <article class="testimonial-float">
+            <div class="testimonial-float__stars">Servicios extra</div>
+            <blockquote>
+              También se pueden cotizar ajustes adicionales como rediseño visual, nuevas secciones, mantenimiento, integración de catálogo, optimización de contenido o mejoras posteriores según el crecimiento del proyecto.
+            </blockquote>
+            <footer>Se cotiza según el alcance real de lo que necesites</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="container catalog-grid">
+        <div class="catalog-wrap reveal">
+          <div class="catalog-copy">
+            <span class="eyebrow">Catálogo completo</span>
+            <h2>Si quieres ver el detalle general del servicio, también puedes compartir tu catálogo en PDF.</h2>
+            <p>Esta opción funciona muy bien cuando el cliente todavía está comparando, quiere revisar con calma o desea ver alcances de forma más ordenada.</p>
+            <div class="catalog-actions">
+              <a href="catalogo-impulso-digital.pdf" class="btn btn--primary" download>Descargar catálogo</a>
+              <a href="https://wa.me/5255586673152?text=Hola,%20quiero%20que%20me%20env%C3%ADes%20el%20cat%C3%A1logo%20completo" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-wrap reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">Contacto directo</span>
+            <h2>Hablemos sobre tu página web.</h2>
+            <p>Si tienes una idea para tu negocio o necesitas mejorar tu presencia digital, puedes escribirme directamente. Analizamos tu proyecto y te propongo la mejor estructura web según tu caso.</p>
+            <div class="contact-actions">
+              <a href="https://wa.me/5255586673152" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+              <a href="mailto:impulsodigital.web.com@gmail.com" class="btn btn--ghost">Enviar correo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cards reveal">
+          <article class="contact-card">
+            <div class="contact-card__head">
+              <h3>WhatsApp</h3>
+              <span class="plan-chip">Respuesta directa</span>
+            </div>
+            <strong>55 8667 3152</strong>
+            <p>La forma más rápida para iniciar una cotización y revisar qué tipo de página te conviene más.</p>
+          </article>
+          <article class="contact-card">
+            <div class="contact-card__head">
+              <h3>Email</h3>
+              <span class="plan-chip">Para ideas detalladas</span>
+            </div>
+            <a href="mailto:impulsodigital.web.com@gmail.com" class="email-highlight">
+    📧 impulsodigital.web.com@gmail.com
+</a>
+            <p>Útil si quieres mandar referencias, textos o información más completa sobre tu proyecto.</p>
+          </article>
+          <article class="contact-card">
+            <div class="contact-card__head">
+              <h3>Facebook</h3>
+              <span class="plan-chip">Seguimiento</span>
+            </div>
+            <p>También puedes conocer más sobre la marca y revisar contenido complementario desde la página de Facebook.</p>
+            <a href="https://www.facebook.com/share/1C4BVYE4VL/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Ir a Facebook</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-wrap reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Dudas normales antes de contratar una página web.</h2>
+          <p>Si un negocio no entiende qué recibe, cuánto le sirve y cómo se trabaja, la venta se complica. Por eso esta parte importa tanto.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item active">
+            <button class="faq-question" type="button">
+              <span>¿Qué tan personalizada puede ser la página?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer" style="max-height: 300px;">
+              <div class="faq-answer__inner">
+                Mucho. La base sigue una línea premium, pero colores, estructura, textos y secciones se adaptan al tipo de negocio y a lo que realmente necesita comunicar.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>¿Incluye versión móvil?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Sí. No como ajuste al final, sino como parte del diseño desde el principio. Una web que falla en celular hoy está mal planteada desde su base.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>¿Puedo cambiar textos, imágenes o secciones después?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Sí. Se pueden hacer ajustes posteriores y también cotizar ampliaciones, cambios de contenido o nuevas secciones conforme el proyecto crezca.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>¿Qué necesito para empezar?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Lo básico: saber qué vendes, a quién te diriges y qué quieres lograr con la web. Si eso no está claro, primero hay que ordenar la idea antes del diseño.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              <span>¿Se pueden agregar más funciones después?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Sí. La página está pensada para crecer. Después se pueden añadir portafolio real, testimonios, más secciones, formularios, mejoras visuales o incluso nuevas integraciones.
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="cta-content">
+            <div>
+              <span class="eyebrow">Siguiente paso</span>
+              <h2>Si tu negocio merece verse serio, necesita una web a la altura.</h2>
+              <p>
+                Impulso Digital está pensado para ayudar a negocios, emprendedores y marcas personales a tener una página web profesional, clara y visualmente fuerte. La idea es simple: que tu presencia digital genere mejor impresión, explique mejor lo que haces y te ayude a conseguir más contactos.
+              </p>
+              <div class="cta-actions">
+                <a href="https://wa.me/5255586673152" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
+                <a href="#inicio" class="btn btn--ghost">Volver arriba</a>
+              </div>
+            </div>
+
+            <div class="cta-panel">
+              <article class="counter">
+                <strong>UI premium</strong>
+                <p>Base visual lista para competir mejor en percepción frente a otras opciones del mercado.</p>
+              </article>
+              <article class="counter">
+                <strong>Desde 0</strong>
+                <p>Construida totalmente desde cero para que no dependas de un código viejo o limitado.</p>
+              </article>
+              <article class="counter">
+                <strong>Escalable</strong>
+                <p>Puedes añadir portafolio real, testimonios, casos o integraciones después.</p>
+              </article>
+            </div>
+          </div>
+          <span class="blur-line"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-box">
+      <div>
+        <strong style="display:block; color: var(--text); margin-bottom: 6px;">Impulso Digital</strong>
+        <span>Tu crecimiento comienza aquí.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://www.facebook.com/share/1C4BVYE4VL/" target="_blank">Facebook</a>
+        <a href="mailto:impulsodigital.web.com@gmail.com">Correo</a>
+        <a href="https://wa.me/5255586673152" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+
+  function closeMenu() {
+    if (!menuToggle || !mobilePanel) return;
+    menuToggle.classList.remove('active');
+    mobilePanel.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  }
+
+  function openMenu() {
+    if (!menuToggle || !mobilePanel) return;
+    menuToggle.classList.add('active');
+    mobilePanel.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
+  }
+
+  menuToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = mobilePanel.classList.contains('active');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  mobilePanel?.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeMenu();
+  });
+
+  document.querySelectorAll('.mobile-panel a').forEach(link => {
+    link.addEventListener('click', () => closeMenu());
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const button = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    button.addEventListener('click', () => {
+      const active = item.classList.contains('active');
+
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('active');
+        other.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      if (!active) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
